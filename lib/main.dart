@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:media_booster_5/spleshScreen.dart';
+import 'package:intro_screen/intro_Screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -17,7 +17,7 @@ void main() async {
       initialRoute: (isIntroVal) ? "/" : "spalshScreen_Page",
       routes: {
         "/": (context) => const MyApp(),
-        "spalshScreen_Page": (context) => const spalshScreen_Page(),
+        "spalshScreen_Page": (context) => const intro_Page(),
       },
     ),
   );
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: const Text("Wel-Come"),
+        title: const Text("Home Page"),
         centerTitle: true,
         actions: [
           IconButton(
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
       body: Container(
         alignment: Alignment.center,
         child: Text(
-          "Wel-Come",
+          "Home Page",
           style: TextStyle(
             fontSize: 40,
             color: Colors.black.withOpacity(0.4),

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class spalshScreen_Page extends StatefulWidget {
-  const spalshScreen_Page({Key? key}) : super(key: key);
+class intro_Page extends StatefulWidget {
+  const intro_Page({Key? key}) : super(key: key);
 
   @override
-  State<spalshScreen_Page> createState() => _spalshScreen_PageState();
+  State<intro_Page> createState() => _intro_PageState();
 }
 
 PageController pageController = PageController();
 
-class _spalshScreen_PageState extends State<spalshScreen_Page> {
+class _intro_PageState extends State<intro_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +65,7 @@ class Page1Component extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 110),
+            const SizedBox(height: 50),
             Center(
 
               child: Image.asset(
@@ -73,13 +73,14 @@ class Page1Component extends StatelessWidget {
                 scale: 7,
               ),
             ),
+            const SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(width: 30),
                 const CircleAvatar(
                   radius: 4,
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.blue,
                 ),
                 const SizedBox(width: 3),
                 CircleAvatar(
@@ -93,9 +94,9 @@ class Page1Component extends StatelessWidget {
                 ),
                 const Spacer(),
                 FloatingActionButton(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.blue,
                   elevation: 0,
-                  child: const Icon(Icons.arrow_forward_ios_rounded),
+                  child: const Text('Next'),
                   onPressed: () {
                     pageController.animateToPage(
                       1,
@@ -168,7 +169,7 @@ class Page2Component extends StatelessWidget {
                 const SizedBox(width: 3),
                 const CircleAvatar(
                   radius: 4,
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.blue,
                 ),
                 const SizedBox(width: 3),
                 CircleAvatar(
@@ -177,9 +178,9 @@ class Page2Component extends StatelessWidget {
                 ),
                 const Spacer(),
                 FloatingActionButton(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.blue,
                   elevation: 0,
-                  child: const Icon(Icons.arrow_forward_ios_rounded),
+                  child: Text('Next'),
                   onPressed: () {
                     pageController.animateToPage(
                       2,
@@ -256,13 +257,13 @@ class Page3Component extends StatelessWidget {
                 const SizedBox(width: 3),
                 const CircleAvatar(
                   radius: 4,
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.blue,
                 ),
                 const Spacer(),
                 FloatingActionButton(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Colors.blue,
                   elevation: 0,
-                  child: const Icon(Icons.arrow_forward_ios_rounded),
+                  child:  Text('start'),
                   onPressed: () async {
                     SharedPreferences prefs =
                     await SharedPreferences.getInstance();
