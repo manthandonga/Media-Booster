@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+final GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email'
+    ]
+);
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,11 +16,27 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+
+  @override
+  void initState() {
+    _googleSignIn.onCurrentUserChanged.listen((account) {
+      setState(() {
+        _currentUser = account;
+      });
+    });
+    _googleSignIn.signInSilently();
+    super.initState();
+  }
+
+
   bool isLPasswordShow = false;
   bool isCheckbox = false;
   TextEditingController lEmailController = TextEditingController();
   TextEditingController lPasswordController = TextEditingController();
 
+
+  GoogleSignInAccount? _currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +50,10 @@ class _LoginPageState extends State<LoginPage> {
               height: 30,
               width: double.infinity,
             ),
-            Image.asset(
-              "images/login.png",
-              scale: 10,
-            ),
+            // Image.asset(
+            //   "images/login.png",
+            //   scale: 10,
+            // ),
             const SizedBox(
               height: 10,
             ),
@@ -177,6 +199,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             InkWell(
               onTap: () {
+
                 Navigator.of(context).pushReplacementNamed("/");
               },
               child: Row(

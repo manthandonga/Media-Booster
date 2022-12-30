@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Global.dart';
+
+final GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email'
+    ]
+);
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -11,6 +18,23 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+
+
+  GoogleSignInAccount? _currentUser;
+
+
+  @override
+  void initState() {
+    _googleSignIn.onCurrentUserChanged.listen((account) {
+      setState(() {
+        _currentUser = account;
+      });
+    });
+    _googleSignIn.signInSilently();
+    super.initState();
+  }
+
+
   bool isPasswordShow = false;
   TextEditingController fullNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -25,13 +49,13 @@ class _SignUpPageState extends State<SignUpPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 30,
+              height: 80,
               width: double.infinity,
             ),
-            Image.asset(
-              "images/signup.png",
-              scale: 8,
-            ),
+            // Image.asset(
+            //   "images/signup.png",
+            //   scale: 8,
+            // ),
             const SizedBox(
               height: 10,
             ),
@@ -159,9 +183,34 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
             ),
+
+            //Google Button
+            InkWell(
+              onTap: ()  {
+                signIn();
+                Navigator.of(context).pushReplacementNamed('login_page');
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                height: 50,
+                width: MediaQuery.of(context).size.width * 0.9,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xffFE4C66)),
+                alignment: Alignment.center,
+                child: const Text(
+                  "Sign Up",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+
+
             const SizedBox(
               height: 20,
             ),
+
+
             InkWell(
               onTap: () {
                 Navigator.of(context).pushReplacementNamed("login_page");
@@ -184,5 +233,17 @@ class _SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
+  }
+
+  void signout(){
+    _googleSignIn.disconnect();
+  }
+
+  Future<void> signIn() async{
+    try{
+      await _googleSignIn.signIn();
+    }catch(e){
+      print('Error signIn is $e');
+    }
   }
 }

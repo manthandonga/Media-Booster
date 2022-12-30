@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "176155335611",
+    "project_id": "login-app-44516",
+    "storage_bucket": "login-app-44516.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176155335611:android:5bce6720d5ac87ebb0429e",
+        "android_client_info": {
+          "package_name": "com.loginwithgoogle.media_booster_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176155335611-8ipbt8bhq9an184fv7kpm2f0cp3u56t4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4G3Iw6JxzuzN3YTUuBo6v6esE0y8Et3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176155335611-8ipbt8bhq9an184fv7kpm2f0cp3u56t4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
