@@ -1,16 +1,8 @@
-# media_booster_2
+# Video Player App
 
 A new Flutter project.
+<img src = "https://user-images.githubusercontent.com/113701720/211371888-448da06f-6a68-4a21-a161-006cd5598da6.jpg" height = 500 width = 250>
+<img src = "https://user-images.githubusercontent.com/113701720/211371900-dbe1c32f-fc91-432a-a932-6a2eb1b24399.jpg" height = 500 width = 250>
+<img src = https://user-images.githubusercontent.com/113701720/211371901-d8c4c3fb-dc8b-4d19-ad33-ac4c4470e5bd.jpg"" height = 500 width = 250>
+<img src = "https://user-images.githubusercontent.com/113701720/211371904-f0cd6680-5742-4dc6-8d4f-764e887f5816.jpg" height = 500 width = 250>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
